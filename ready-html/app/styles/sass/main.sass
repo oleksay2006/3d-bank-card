@@ -1,0 +1,212 @@
+@use 'sass:math'
+@use 'sass:color'
+
+@import config
+@import 'blocks/**/*'
+
+body
+  // background-color: #1C1C1C
+  background-color: #DFCEE9
+  font-weight: 300
+  // perspective: 1000px
+
+.preserve
+  transform-style: preserve-3d
+.text-right
+  text-align: right
+.text-center
+  text-align: center
+
+
+.top-line
+  background-color: #fff
+  position: absolute
+  width: 100%
+  padding: 40px 0
+  z-index: 100
+  +media-breakpoint-down(lg)
+    position: relative
+    padding: 20px 0 30px 0
+    
+  .container-fluid
+    max-width: 1680px
+  .row
+    +media-breakpoint-down(sm)
+      flex-direction: column
+      align-items: center
+  .logo
+    +media-breakpoint-down(sm)
+      font-size: 24px
+      padding: 0
+  .col-6
+    +media-breakpoint-down(sm)
+      width: auto
+      margin-top: 10px
+  .button
+    +media-breakpoint-up(md)
+      margin-right: 50px
+    +media-breakpoint-down(sm)
+      // margin-right: 10px
+      position: relative
+      right: 5px
+      font-size: 14px
+
+.logo
+  font-size: 26px
+  color: #000
+  font-weight: bold
+  padding: 10px
+  span
+    font-weight: 300
+    font-size: 23px
+    transition: color 0.5s ease
+  &:hover
+    text-decoration: none
+    color: #000
+    span
+      color: #666666
+  +media-breakpoint-up(md)
+      margin-left: 40px
+a
+  text-decoration: none
+.button
+  background-color: #FA5255
+  color: #FFFFFF
+  font-weight: bold
+  display: inline-block
+  padding: 10px 35px
+  border-radius: 16px
+  font-size: 16px
+  font-weight: 700
+  transition: background-color 0.25s ease
+  text-align: center
+  &:hover
+    color: #FFFFFF
+    background-color: darken(#FA5255, 5)
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%)
+.card-header
+  height: 100vh
+  min-height: 700px
+  overflow: hidden
+  position: relative
+  perspective: 1500px
+  +media-breakpoint-down(sm)
+    overflow: visible
+  +media-breakpoint-down(lg)
+    height: auto
+  // &::before
+  //   content: ''
+  //   position: absolute
+  //   top: 0
+  //   left: 0
+  //   height: 100%
+  //   width: 100%
+  //   background-image: url(../images/ukraineHigh.svg)
+  //   background-repeat: no-repeat
+  //   background-position: center
+  //   opacity: 0.5
+
+.content
+  height: 100%
+  padding: 160px 0
+  display: flex
+  justify-content: center
+  align-items: center
+  transform-style: preserve-3d
+  +media-breakpoint-down(lg)
+    transform-style: flat
+    transform: rotate(0) !important
+    padding: 30px 0
+  .mono
+    color: #323232
+    font-weight: 700
+    font-size: 32px
+    margin: 0
+  .mb
+    margin-bottom: 20px
+  p
+    font-weight: 500
+    font-size: 16px
+    color: #323232
+  // h1, p, a
+  //   padding-left: 20px
+.trylink
+  color: #323232
+  font-weight: bold
+  margin-top: 10px
+  display: inline-block
+  font-size: 18px
+  +media-breakpoint-down(lg)
+    margin: 5px 0 20px 0
+  +media-breakpoint-down(md)
+    margin-top: 10px
+    margin-bottom: 30px
+  i
+    display: inline-block
+    font-style: normal
+    font-weight: normal
+    color: #fff
+    width: 35px
+    height: 35px
+    background-color: #000
+    text-align: center
+    border-radius: 100%
+    line-height: 32px
+    margin-right: 10px
+  &:hover
+    color: #323232
+
+.card
+  position: relative
+  width: 458px
+  height: 288px
+  display: inline-block
+  +media-breakpoint-down(md)
+    background-image: url(../images/dist/card.png)
+    background-size: cover
+    width: 100%
+    padding-top: 64%
+    height: auto
+  > img
+    position: absolute
+    +media-breakpoint-down(md)
+      display: none
+  &-logo_w
+    z-index: 12
+    top: 20px
+    left: 35px
+  &-chip
+    z-index: 12
+    left: 35px
+    top: 80px
+  &-number-holder
+    z-index: 12
+    left: 35px
+    top: 160px
+  &-valid
+    z-index: 12
+    top: 195px
+    right: 100px
+
+.l_main 
+  left: 0
+  z-index: 10
+.l2_main 
+  left: 0
+  z-index: 8
+  left: -10px
+  top: 10px
+.l3_main 
+  left: 0
+  z-index: 6
+  left: -20px
+  top: 20px
+
+.level--2
+  transform: translateZ(-70px)
+.level--1
+  transform: translateZ(-35px)
+.level-1
+  transform: translateZ(20px)
+.level-2
+  transform: translateZ(40px)
